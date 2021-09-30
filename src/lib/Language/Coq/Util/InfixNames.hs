@@ -18,7 +18,6 @@ import           Control.Applicative
 import           Control.Lens        hiding ( op )
 import           Control.Monad
 import           Data.Char
-import           Data.Semigroup      ( Semigroup(..) )
 import           Data.Text           ( Text )
 import qualified Data.Text           as Text
 import           Encoding            ( zDecodeString, zEncodeString )

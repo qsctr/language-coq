@@ -41,7 +41,6 @@ module Language.Coq.Util.PrettyPrint
   ) where
 
 import           Data.Foldable
-import           Data.Semigroup               ( Semigroup(..) )
 import           Data.Text                    ( Text )
 import qualified Data.Text.Lazy               as LazyText
 import           Text.PrettyPrint.Leijen.Text

@@ -59,7 +59,6 @@ import           Data.Foldable
 import           Data.List.NonEmpty           ( NonEmpty(..), nonEmpty )
 import qualified Data.List.NonEmpty           as NonEmpty
 import           Data.Maybe
-import           Data.Semigroup               ( (<>) )
 import           Data.Text                    ( Text )
 import           GHC.Stack
 
@@ -235,7 +234,7 @@ unsafeIdentToQualid :: HasCallStack => Ident -> Qualid
 unsafeIdentToQualid i = fromMaybe (error $ "unsafeIdentToQualid: " ++ show i)
   (identToQualid i)
 
-collectArgs :: Monad m => Term -> m (Qualid, [Term])
+collectArgs :: (Monad m, MonadFail m) => Term -> m (Qualid, [Term])
 collectArgs (Qualid qid) = return (qid, [])
 collectArgs (App t args) = do
   (f, args1) <- collectArgs t
